@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.linear-gradient {
+  background: linear-gradient(
+    270.14deg,
+    rgba(38, 62, 40, 0) -7.14%,
+    #1f3231 87.01%
+  );
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  filter: invert(0.8);
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.btn {
+  flex: 1 1 auto;
+  font-weight: bold;
+  margin: 10px;
+  padding: 30px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: rgb(44, 44, 44);
+  border-radius: 10px;
+  background-image: linear-gradient(to right, #21a3f3,
+  #ff6b08, #cf23cf, #eedd44);
+ }
+
+ .btn:hover {
+  background-position: right center; /* change the direction of the change here */
+}
+
+.btn2 {
+  margin-top: 1rem;
+  font-size: 1.25rem;
+}
+
+.btn2::file-selector-button {
+  font-weight: bold;
+  color: dodgerblue;
+  padding: 0.5em;
+  border: thin solid grey;
+  border-radius: 3px;
+}
+
+.upload{
+  height: 10px;
+  position: relative;
+}
+
+.extra{
+  position: relative;
+  bottom: 11px;
+  color: rgb(243, 236, 240);
+}
+
+body {
+    font-family: 'Assistant', sans-serif;
+    color: rgb(243, 236, 240);
+}
+
+.heading {
+    font-family: 'Abril Fatface', serif;
+    font-weight: 900;
+    font-size:1.5rem;
+    padding-bottom: 1rem;
+}
+
+.title {
+			background: linear-gradient(to right, #21a3f3,
+					#ff6b08, #cf23cf, #eedd44);
+          
+			-webkit-text-fill-color: transparent;
+			-webkit-background-clip: text;
+    
+		
+}
+
+
+.placeholder{
+  position: relative;
+  right: 60px;
+  bottom: 5px;
+  background-color:#932393;
+  padding: 7px;
+  border-radius: 1em;
+  color: white;
+  width: 370px;
+}
+
+.input{
+  position: static;
+}
+
+.share{
+  position: relative;
+  top: 6px;
+  left: 100px;
+}
+
+.showOther{
+  position: relative;
+  bottom: 12px;
+}
+
+select{
+  color:black;
+  
+}
+
+option{
+  color: black;
+}
+
+.parent {
+  display: flex;
+  justify-content: space-between;
+
+}
+
+
