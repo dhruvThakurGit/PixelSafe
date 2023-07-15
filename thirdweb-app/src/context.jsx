@@ -10,6 +10,8 @@ const StateContext = createContext();
 
 export const StateContextProvider = ({ children }) => {
   const [displayFlag, setdisplayFlag] = useState(true);
+  const [changeFlag, setchangeFlag] = useState(true);
+
   const [url, setUrl] = useState([]);
   const { contract } = useContract(
     "0xA089383799141f23f46F04603539850F7566CF83"
@@ -27,6 +29,17 @@ export const StateContextProvider = ({ children }) => {
       fetchaccessArr();
     }
   }, [displayFlag, address, contract]);
+
+  useEffect(() => {
+    console.log("Changed");
+    displayOther();
+  }, [changeFlag]);
+
+  const displayOther = async (addr) => {
+    console.log(address, addr);
+    const data = await contract.call("display", [address, addr]);
+    setUrl(data);
+  };
 
   const fetchaddrArr = async () => {
     const data = await contract.call("getUsers");
@@ -54,9 +67,7 @@ export const StateContextProvider = ({ children }) => {
     console.log("Removing ", removeAddr);
     await contract.call("deny", [address, removeAddr]);
   };
-  const displayOther = async (address) => {
-    console.log(address);
-  };
+
   const getAccessList = async () => {
     return contract.call("getAccessList", [address]);
   };
@@ -77,6 +88,8 @@ export const StateContextProvider = ({ children }) => {
         displayFlag,
         addrArr,
         accessArr,
+        changeFlag,
+        setchangeFlag,
         setdisplayFlag,
         connect,
         addUrl,

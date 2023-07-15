@@ -5,7 +5,7 @@ import Display from "../components/Display";
 import { ConnectWallet } from "@thirdweb-dev/react";
 
 const Images = () => {
-  const { address, connect } = useStateContext();
+  const { address } = useStateContext();
   return (
     <div>
       {address ? (

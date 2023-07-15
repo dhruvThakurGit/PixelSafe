@@ -31,9 +31,8 @@ const Access = () => {
             btnType="button"
             title={"Add Access"}
             handleClick={() => {
-              // allowUser(addAddr);
-              // setaddAddr("");
-              console.log(accessArr);
+              allowUser(addAddr);
+              setaddAddr("");
             }}
             styles={"btn upload extra share"}
             extra={"extra"}

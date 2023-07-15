@@ -24,11 +24,11 @@ const Control = () => {
           />
           <div>
             <h1 className="text-3xl">Account</h1>
-            <h1>{address ? address : <pre> Please Connect</pre>}</h1>
+            <h1>{address ? address : <pre>Please Connect</pre>}</h1>
           </div>
         </div>
         <div className="child">
-          <ConnectWallet theme="white" btnTitle="Connect Wallet" />
+          <ConnectWallet theme="light" btnTitle="Connect Wallet" />
         </div>
       </div>
 

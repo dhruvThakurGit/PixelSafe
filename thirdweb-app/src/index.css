@@ -42,8 +42,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   #ff6b08, #cf23cf, #eedd44);
  }
 
- .btn:hover {
-  background-position: right center; /* change the direction of the change here */
+.btn:hover {
+  background-position: right center; 
 }
 
 .btn2 {
@@ -104,14 +104,11 @@ body {
   width: 370px;
 }
 
-.input{
-  position: static;
-}
 
 .share{
   position: relative;
   top: 6px;
-  left: 100px;
+  left: 75px;
 }
 
 .showOther{
