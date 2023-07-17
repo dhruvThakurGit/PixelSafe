@@ -3,7 +3,6 @@ import { useStateContext } from "../context";
 import Access from "../components/Access";
 import Add from "../components/Add";
 import { ConnectWallet } from "@thirdweb-dev/react";
-import { profile } from "../assets";
 
 const Control = () => {
   const { address } = useStateContext();
@@ -13,7 +12,6 @@ const Control = () => {
       <div className="basis-1/6 text-8xl mb-[60px] ">
         <h1 className="title">PixelSafe</h1>
       </div>
-
       <div className="parent">
         <div className="child basis-1/6 text-left parent">
           <img
@@ -31,7 +29,6 @@ const Control = () => {
           <ConnectWallet theme="light" btnTitle="Connect Wallet" />
         </div>
       </div>
-
       <div className="basis-1/6 ">
         <Add />
       </div>

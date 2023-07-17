@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import CustomButton from "./CustomButton";
 import { useStateContext } from "../context";
 import Loader from "./Loader";
+import ShowOther from "./ShowOther";
 
 const Access = () => {
   const [addAddr, setaddAddr] = useState("");
@@ -66,15 +67,14 @@ const Access = () => {
       </div>
 
       <div className="basis-1/2 mt-10">
-        <p>You have given access to these accounts</p>
         {accessArr.length > 0 ? (
-          <select value={value} onChange={handleChange}>
-            {accessArr.map((option, i) => (
-              <option key={i} value={option}>
-                {option}
-              </option>
-            ))}
-          </select>
+          <div>
+            <div className="text-black font-semibold">
+              <p>You have given access to</p>
+            </div>
+
+            <ShowOther change={false} array={accessArr} />
+          </div>
         ) : (
           <h1>
             Give access through the <b>ADD ACCESS</b> button !

@@ -32,14 +32,14 @@ export const StateContextProvider = ({ children }) => {
   }, [displayFlag, address, contract]);
 
   const displayOther = async (addr) => {
-    console.log(address, addr);
+    setisloading(true);
     try {
       const data = await contract.call("display", [address, addr]);
       setUrl(data);
     } catch (error) {
       setUrl(false);
-      window.alert("Access Denied");
     }
+    setisloading(false);
   };
 
   const fetchaddrArr = async () => {

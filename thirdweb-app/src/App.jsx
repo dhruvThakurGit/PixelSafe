@@ -12,6 +12,5 @@ export default function App() {
         <Images />
       </div>
     </div>
-    // ADBLOCKER
   );
 }

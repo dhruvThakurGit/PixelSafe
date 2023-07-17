@@ -5,7 +5,7 @@ import Image from "./Image";
 import ShowOther from "./ShowOther";
 
 const Display = () => {
-  const { displayFlag, setdisplayFlag } = useStateContext();
+  const { displayFlag, setdisplayFlag, addrArr } = useStateContext();
   const { url } = useStateContext();
 
   return (
@@ -21,8 +21,10 @@ const Display = () => {
             styles={"btn"}
           />
         </div>
-        <p>You are viewing</p>
-        <ShowOther />
+        <div className="text-black font-semibold">
+          <p>You are viewing</p>
+        </div>
+        <ShowOther change={true} array={addrArr} />
       </div>
 
       {/* URL SET TO FALSE if access denied */}
