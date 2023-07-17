@@ -3,6 +3,7 @@ import CustomButton from "../components/CustomButton";
 import { useStateContext } from "../context";
 import Display from "../components/Display";
 import { ConnectWallet } from "@thirdweb-dev/react";
+import Loader from "../components/Loader";
 
 const Images = () => {
   const { address } = useStateContext();

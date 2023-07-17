@@ -3,15 +3,16 @@ import { useStateContext } from "../context";
 
 const ShowOther = () => {
   const [value, setValue] = useState("");
-  const { addrArr, address, contract, displayOther } = useStateContext();
+  const { addrArr, address, contract, displayOther, displayflag } =
+    useStateContext();
 
   useEffect(() => {
     setValue(address);
-  }, [address, contract]);
+    console.log("Hello");
+  }, [address, contract, displayflag]);
 
   const handleChange = (event) => {
     setValue(event.target.value);
-    console.log(event.target.value);
     displayOther(event.target.value);
   };
 

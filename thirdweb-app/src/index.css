@@ -113,7 +113,7 @@ body {
 
 .showOther{
   position: relative;
-  bottom: 12px;
+  text-align: center;
 }
 
 select{
@@ -132,3 +132,13 @@ option{
 }
 
 
+.access-denied {
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f8f8f8;
+  font-size: 24px;
+  font-weight: bold;
+  color: red;
+}

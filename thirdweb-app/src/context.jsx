@@ -11,6 +11,7 @@ const StateContext = createContext();
 export const StateContextProvider = ({ children }) => {
   const [displayFlag, setdisplayFlag] = useState(true);
   const [changeFlag, setchangeFlag] = useState(true);
+  const [loading, setisloading] = useState(false);
 
   const [url, setUrl] = useState([]);
   const { contract } = useContract(
@@ -30,15 +31,15 @@ export const StateContextProvider = ({ children }) => {
     }
   }, [displayFlag, address, contract]);
 
-  useEffect(() => {
-    console.log("Changed");
-    displayOther();
-  }, [changeFlag]);
-
   const displayOther = async (addr) => {
     console.log(address, addr);
-    const data = await contract.call("display", [address, addr]);
-    setUrl(data);
+    try {
+      const data = await contract.call("display", [address, addr]);
+      setUrl(data);
+    } catch (error) {
+      setUrl(false);
+      window.alert("Access Denied");
+    }
   };
 
   const fetchaddrArr = async () => {
@@ -56,23 +57,32 @@ export const StateContextProvider = ({ children }) => {
   };
 
   const addUrl = async (url) => {
+    setisloading(true);
     console.log(contract);
     await contract.call("add", [address, url]);
+    setisloading(false);
   };
   const allowUser = async (addAddr) => {
+    setisloading(true);
     console.log("Adding ", addAddr);
     await contract.call("allow", [address, addAddr]);
+    setisloading(false);
   };
   const denyUser = async (removeAddr) => {
+    setisloading(true);
+
     console.log("Removing ", removeAddr);
     await contract.call("deny", [address, removeAddr]);
+    setisloading(false);
   };
 
   const getAccessList = async () => {
     return contract.call("getAccessList", [address]);
   };
   const getPhotos = async () => {
+    setisloading(true);
     const data = await contract.call("getPhotos", [address]);
+    setisloading(false);
     return data;
   };
   const getUsers = async () => {
@@ -89,6 +99,7 @@ export const StateContextProvider = ({ children }) => {
         addrArr,
         accessArr,
         changeFlag,
+        loading,
         setchangeFlag,
         setdisplayFlag,
         connect,

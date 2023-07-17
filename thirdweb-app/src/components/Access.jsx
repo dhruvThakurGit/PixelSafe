@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import CustomButton from "./CustomButton";
 import { useStateContext } from "../context";
+import Loader from "./Loader";
 
 const Access = () => {
   const [addAddr, setaddAddr] = useState("");
   const [removeAddr, setremoveAddr] = useState("");
-  const { allowUser, denyUser, accessArr } = useStateContext();
+  const { allowUser, denyUser, accessArr, loading } = useStateContext();
   const [value, setValue] = useState("");
 
   const handleChange = (event) => {
@@ -15,6 +16,8 @@ const Access = () => {
 
   return (
     <div className="flex flex-col">
+      {loading && <Loader />}
+
       <div className="basis-1/2">
         <h1 className="heading">Share access with</h1>
         <div className="input">

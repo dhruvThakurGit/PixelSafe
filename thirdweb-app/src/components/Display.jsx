@@ -21,18 +21,27 @@ const Display = () => {
             styles={"btn"}
           />
         </div>
+        <p>You are viewing</p>
         <ShowOther />
       </div>
 
-      <div className="grid grid-cols-3 gap-3 pt-8">
-        {url.map((item, i) => {
-          return (
-            <div key={i}>
-              <Image image={item} i={i} />
-            </div>
-          );
-        })}
-      </div>
+      {/* URL SET TO FALSE if access denied */}
+
+      {url ? (
+        <div className="grid grid-cols-3 gap-3 pt-8">
+          {url.map((item, i) => {
+            return (
+              <div key={i}>
+                <Image image={item} i={i} />
+              </div>
+            );
+          })}
+        </div>
+      ) : (
+        <div className="access-denied">
+          <p>YOU DON'T HAVE ACCESS</p>
+        </div>
+      )}
     </div>
   );
 };

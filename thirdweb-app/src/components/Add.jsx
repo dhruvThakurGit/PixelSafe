@@ -2,9 +2,11 @@ import React, { useContext, useEffect, useState } from "react";
 import CustomButton from "./CustomButton";
 import axios from "axios";
 import { useStateContext } from "../context";
+import Loader from "./Loader";
 
 const Add = () => {
   const [file, setFile] = useState(null);
+  const [loading, setloading] = useState(false);
   const { addUrl } = useStateContext();
 
   const retrieve = (e) => {
@@ -17,6 +19,7 @@ const Add = () => {
   };
 
   const uploadIFS = async (file) => {
+    setloading(true);
     if (file) {
       try {
         const formData = new FormData();
@@ -38,10 +41,12 @@ const Add = () => {
         console.log(error, "Could not upload ");
       }
     }
+    setloading(false);
   };
 
   return (
     <div>
+      {loading && <Loader />}
       <input
         type="file"
         name="avatar"
