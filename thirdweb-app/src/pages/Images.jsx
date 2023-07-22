@@ -4,7 +4,6 @@ import { useStateContext } from "../context";
 import Display from "../components/Display";
 import { ConnectWallet } from "@thirdweb-dev/react";
 import Loader from "../components/Loader";
-import { copy } from "../assets";
 
 const Images = () => {
   const { address, loading } = useStateContext();

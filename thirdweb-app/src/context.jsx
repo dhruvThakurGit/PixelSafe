@@ -15,7 +15,7 @@ export const StateContextProvider = ({ children }) => {
 
   const [url, setUrl] = useState([]);
   const { contract } = useContract(
-    "0xA089383799141f23f46F04603539850F7566CF83"
+    "0xb20f4fD9c43F2E11Cea9beB186f2CC20eA0A497e"
   );
   const [addrArr, setaddrArr] = useState([]);
   const [accessArr, setaccessArr] = useState([]);

@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity 0.8.19;
 
-contract PixelSafeNew {
+contract PixelSafe {
     mapping(address => string[]) value;
     mapping(address => mapping(address => bool)) ownership;
     address[] users;
